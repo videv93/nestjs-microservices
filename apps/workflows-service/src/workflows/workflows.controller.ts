@@ -8,8 +8,7 @@ import {
   Delete,
 } from '@nestjs/common';
 import { WorkflowsService } from './workflows.service';
-import { CreateWorkflowDto } from './dto/create-workflow.dto';
-import { UpdateWorkflowDto } from './dto/update-workflow.dto';
+import { CreateWorkflowDto, UpdateWorkflowDto } from '@app/workflows';
 
 @Controller('workflows')
 export class WorkflowsController {
