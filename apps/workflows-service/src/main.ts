@@ -12,13 +12,12 @@ async function bootstrap() {
       transport: Transport.NATS,
       options: {
         servers: process.env.NATS_URL,
+        // queue: 'workflows-service',
       },
     },
     { inheritAppConfig: true },
   );
-
   await app.startAllMicroservices();
-
   await app.listen(3001);
 }
 bootstrap();
