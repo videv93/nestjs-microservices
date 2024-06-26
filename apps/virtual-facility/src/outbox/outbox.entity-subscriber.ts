@@ -1,13 +1,13 @@
 import {
   DataSource,
   EntitySubscriberInterface,
-  // EventSubscriber,
+  EventSubscriber,
   InsertEvent,
 } from 'typeorm';
 import { Outbox } from './entities/outbox.entity';
 import { OutboxProcessor } from './outbox.processor';
 
-//@EventSubscriber()
+@EventSubscriber()
 export class OutboxEntitySubscriber
   implements EntitySubscriberInterface<Outbox>
 {
