@@ -1,6 +1,6 @@
 import { Inject, Injectable, Logger } from '@nestjs/common';
 import { ClientProxy } from '@nestjs/microservices';
-import { Cron, CronExpression } from '@nestjs/schedule';
+// import { Cron, CronExpression } from '@nestjs/schedule';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { WORKFLOWS_SERVICE } from '../constants';
@@ -26,7 +26,7 @@ export class OutboxProcessor {
    * Also, in the real-world system, we would rather use "@nestjs/bull" instead of "@nestjs/schedule"
    * because it provides more sophisticated features (e.g. locking, supports multiple nodes running in parallel etc.).
    */
-  @Cron(CronExpression.EVERY_10_SECONDS)
+  // @Cron(CronExpression.EVERY_10_SECONDS)
   async processOutboxMessages() {
     this.logger.debug(`Processing outbox messages`);
 

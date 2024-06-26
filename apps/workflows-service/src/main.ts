@@ -13,6 +13,8 @@ async function bootstrap() {
       options: {
         urls: [process.env.RABBITMQ_URL],
         queue: 'workflows-service',
+        // message broker won't automatically acknowledge message
+        noAck: false,
       },
     },
     { inheritAppConfig: true },
