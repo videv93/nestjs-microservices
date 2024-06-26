@@ -14,5 +14,7 @@ export class NotificationsServiceController {
     this.logger.debug(
       `Sending notification about the alarm: ${JSON.stringify(data)}`,
     );
+
+    throw new Error('Failed to send notification');
   }
 }
