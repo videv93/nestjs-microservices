@@ -1,5 +1,5 @@
 import { Injectable, Logger } from '@nestjs/common';
-import { Cron, CronExpression } from '@nestjs/schedule';
+// import { Cron, CronExpression } from '@nestjs/schedule';
 import { InboxService } from '../inbox/inbox.service';
 import { EntityManager } from 'typeorm';
 import { Inbox } from '../inbox/entities/inbox.entity';
@@ -17,7 +17,7 @@ export class WorkflowsInboxProcessor {
    * Also, in the real-world system, we would rather use "@nestjs/bull" instead of "@nestjs/schedule"
    * because it provides more sophisticated features (e.g. locking, supports multiple nodes running in parallel etc.).
    */
-  @Cron(CronExpression.EVERY_10_SECONDS)
+  // @Cron(CronExpression.EVERY_10_SECONDS)
   async processInboxMessages() {
     this.logger.debug(`Processing inbox messages`);
 
